@@ -1,0 +1,62 @@
+mergeColorMaps($bulma-colors, $custom-colors)
+  $merged-colors = $bulma-colors
+
+  if typeof($custom-colors) == 'object'
+    for $name, $colors in $custom-colors
+      $color = null
+      $color-invert = null
+
+      if typeof($name) == 'string'
+        if isColor($colors)
+          $color = $colors
+          $color-invert = findColorInvert($color)
+        else if typeof($colors) == 'ident' // Typeof zero length ident will return null
+          $color = (isColor($colors[0]) ? $colors[0] : null)
+          if $color != null
+            $color-invert = findColorInvert(isColor($colors[1]) ? $colors[1] : $color)
+
+      if $color != null
+        $merged-colors = merge($merged-colors, { $name: ($color $color-invert) })
+
+  return $merged-colors
+
+isColor($color)
+  $type = typeof($color)
+  return $type == 'rgba' || $type == 'hsla'
+
+findColorInvert($color)
+  if luminosity($color) > 0.55
+    return rgba(#000, 0.7)
+  else
+    return #fff
+
+hslify($color)
+  $h = hue($color)
+  $s = saturation($color)
+  $l = lightness($color)
+  return { h: $h, s: $s, l: $l }
+
+adjust-hsl($color, $hue = 0, $saturation = 0, $lightness = 0)
+  $hsl = hslify($color)
+  return hsl(
+    $hsl.h + $hue,
+    $hsl.s + $saturation,
+    $hsl.l + $lightness)
+
+// Sass built-in function used by Bulma
+adjust-hue($color, $angle)
+  return adjust-hsl($color, $hue: $angle)
+
+sass-lighten($color, $amount)
+  return adjust-hsl($color, $lightness: $amount)
+
+sass-darken($color, $amount)
+  return adjust-hsl($color, $lightness: - $amount)
+
+relative-dimension($size)
+  $input-unit = unit($size)
+  $value = $size / ($body-auto-scale > 0 ? $body-size : 1)
+  $unit = ($body-auto-scale > 0 ? 'rem' : ($input-unit == '' ? unit($body-size) : $input-unit))
+  return unit($value, $unit)
+
+r = relative-dimension

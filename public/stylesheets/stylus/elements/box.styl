@@ -1,0 +1,24 @@
+$box-color            ?= $text
+$box-background-color ?= $white
+$box-radius           ?= $radius-large
+$box-shadow           ?= 0 r(2) r(3) rgba($black, 0.1), 0 0 0 r(1) rgba($black, 0.1)
+$box-padding          ?= 1.25rem
+
+$box-link-hover-shadow  ?= 0 r(2) r(3) rgba($black, 0.1), 0 0 0 r(1) $link
+$box-link-active-shadow ?= inset 0 r(1) r(2) rgba($black, 0.2), 0 0 0 r(1) $link
+
+.box
+  block()
+  background-color: $box-background-color
+  border-radius: $box-radius
+  box-shadow: $box-shadow
+  color: $box-color
+  display: block
+  padding: $box-padding
+
+a.box
+  &:hover
+  &:focus
+    box-shadow: $box-link-hover-shadow
+  &:active
+    box-shadow: $box-link-active-shadow

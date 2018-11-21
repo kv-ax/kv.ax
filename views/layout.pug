@@ -1,0 +1,40 @@
+doctype html
+//- Append OGP
+html(Prefix='og: http://ogp.me/ns#')
+  head
+    // Global site tag (gtag.js) - Google Analytics
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-129281731-1')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-129281731-1');
+
+    title #{title} - kv.ax
+    //- OGP Tags
+    meta(property='og:title', content=title)
+    meta(property='og:site_name', content='kv.ax')
+    meta(property='og:url', content='https://kv.ax/')
+    meta(property='og:type', content='website')
+    meta(property='og:description', content=description)
+    meta(property='og:image', content='/Logo.png')
+    //- Default variables
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //- Site Description
+    meta(name='description', content='#{description}')
+    //- Favicon
+    link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png?v=OmJBmpYEAQ")
+    link(rel="icon", type="image/png", sizes="32x32", href="/favicon-32x32.png?v=OmJBmpYEAQ")
+    link(rel="icon", type="image/png", sizes="16x16", href="/favicon-16x16.png?v=OmJBmpYEAQ")
+    link(rel="manifest", href="/site.webmanifest?v=OmJBmpYEAQ")
+    link(rel="mask-icon", href="/safari-pinned-tab.svg?v=OmJBmpYEAQ", color="#0063ff")
+    link(rel="shortcut icon", href="/favicon.ico?v=OmJBmpYEAQ")
+    meta(name="msapplication-TileColor", content="#0063ff")
+    meta(name="theme-color", content="#0063ff")
+
+    //- Stylesheets
+    link(rel='stylesheet', href=cssPath)
+    link(rel="stylesheet", href="https://unpkg.com/ionicons@4.4.7/dist/css/ionicons.min.css")
+  body

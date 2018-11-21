@@ -1,0 +1,103 @@
+include layout
+//-
+  Hero Header
+
+section.hero.is-hero.is-dark.is-fullheight
+  .hero-head
+    //-
+      Navbar
+
+    header.navbar.is-transparent
+      .container
+        .navbar-brand: a.navbar-item(href='/')
+          svg(width='32' height='44' viewbox='0 0 32 44' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M30.5657 1.34597C32.441 3.20411 32.441 6.20574 30.5657 8.06389L16.5247 21.9762L30.5657 35.8885C32.441 37.7466 32.441 40.7482 30.5657 42.6064C28.6903 44.4645 25.6609 44.4645 23.7856 42.6064L6.37867 25.359C4.50333 23.5008 4.50333 20.4992 6.37867 18.641L23.7856 1.39361C25.6609 -0.464537 28.6903 -0.464537 30.5657 1.39361V1.34597Z' fill='url(#paint0_linear)')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M2.29323 16.0381L18.3458 0H5.73307C2.57988 0 0 2.57755 0 5.72789V18.3293L2.24545 16.0858L2.29323 16.0381Z' fill='white')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M2.29323 28.0189L18.3458 44.057H5.73307C2.57988 44.057 0 41.4795 0 38.3291V25.7278L2.24545 27.9712L2.29323 28.0189Z' fill='white')
+            defs
+              lineargradient#paint0_linear(x1='4.97217' y1='0' x2='44.2007' y2='24.072' gradientunits='userSpaceOnUse')
+                stop(stop-color='#4D7DFF')
+                stop(offset='1' stop-color='#0063FF')
+
+        .navbar-end.is-active: .navbar-item
+          a.button.is-primary.has-text-weight-700(href="/contact") Contact Me
+  //-
+    Hero content
+
+  .hero-body
+    .container
+      h1.title.has-text-weight-700 Konstantin Velitchko
+      h2.subtitle.has-text-weight-600 I am a UX Designer and Engineer. I craft #[span#orange a]mbitous e#[span#orange x]periences.
+      .tags.font-family-y
+        .tag.is-black UX Research
+        .tag.is-black Information Architecture
+        .tag.is-black Interaction Design
+        .tag.is-black Prototyping
+      .tags.font-family-y
+        .tag.is-dark Full Stack
+        .tag.is-dark IoT
+        .tag.is-dark Hardware Design
+        .tag.is-dark Engineering
+//-
+  Case studies
+
+section.section
+  .container.has-text-left
+    .columns
+      .column.is-one-quarter.casestudy
+        img(src="https://i.kv.ax/coinme.png")
+      .column
+        h3.subtitle.is-uppercase.has-text-weight-500  cryptocurrency
+        h1.title.has-text-weight-700  Coinme
+        p.description.font-family-y.has-text-weight-300 Creating a new feature in an established product with extensive user research and validation.
+      .column.is-narrow.has-text-centered.is-centered.test
+         a.button.is-primary.has-text-weight-700(href="/coinme") Find out more!
+
+section.section
+  .container
+    .columns
+      .column.is-one-quarter.casestudy
+        img(src="https://i.kv.ax/trip.png")
+      .column
+        h3.subtitle.is-uppercase.has-text-weight-500 Government
+        h1.title.has-text-weight-700 Metro Trip Planner
+        p.description.font-family-y Redesigning a brick & mortar store’s website to better suit user’s needs and aspirations based on user research and usability testing.
+      .column.is-narrow.has-text-centered.is-centered.test
+        a.button.is-primary.has-text-weight-700(href="/trip+planner") Find out more!
+
+section.section
+  .container
+    .columns
+      .column.is-one-quarter.casestudy
+        img(src="https://i.kv.ax/butter.png")
+      .column
+        h3.subtitle.is-uppercase.has-text-weight-500 e-commerce
+        h1.title.has-text-weight-700 Butter Home
+        p.description.font-family-y Redesigning a brick & mortar store’s website to better suit user’s needs and aspirations based on user research and usability testing.
+      .column.is-narrow.has-text-centered.is-centered.test
+        a.button.is-primary.has-text-weight-700(href="/butter+home") Find out more!
+//-
+  Footer
+
+footer.footer
+  .content.has-text-centered
+    h1.title.has-text-weight-700 Reach out to me!
+    .columns.is-centered
+      .column.is-narrow.is-centered
+        p.is-5.has-text-weight-500 Email me @ 
+          a.has-text-weight-800(href="mailto:kv@kv.ax") kv@kv.ax
+      .column.is-narrow.is-centered
+        p.is-5.has-text-weight-500 Text me @ 
+          a.has-text-weight-800(href="sms:14255984796") 425 598 4796
+    .columns.is-centered
+      .column.is-narrow
+        a.has-text-weight-700(href="dribbble") dribbble 
+          .icon.ion-logo-dribbble
+      .column.is-narrow
+        a.has-text-weight-700(href="dribbble") github
+          i.icon.ion-logo-github
+      .column.is-narrow
+        a.has-text-weight-700(href="dribbble") linkedin
+          i.icon.ion-logo-linkedin
+  .legal.has-text-centered
+      p.has-text-weight-700 © 2018 Konstantin Velitchko #[span.has-text-weight-300 designed and developed by me]
