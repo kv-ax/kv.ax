@@ -1,5 +1,5 @@
 include layout
-section.hero.is-coinme.is-fullheight.is-dark
+section.hero.is-coinme.is-dark
     .hero-head
         header.navbar.is-transparent
             .container
@@ -9,14 +9,38 @@ section.hero.is-coinme.is-fullheight.is-dark
                         path(fill-rule='evenodd' clip-rule='evenodd' d='M2.29323 16.0381L18.3458 0H5.73307C2.57988 0 0 2.57755 0 5.72789V18.3293L2.24545 16.0858L2.29323 16.0381Z' fill='white')
                         path(fill-rule='evenodd' clip-rule='evenodd' d='M2.29323 28.0189L18.3458 44.057H5.73307C2.57988 44.057 0 41.4795 0 38.3291V25.7278L2.24545 27.9712L2.29323 28.0189Z' fill='white')
     .hero-body.has-text-centered
-        .columns.has-text-right
-            .column.is-one-fifth.is-offset-7
-                p.has-text-weight-800 Dec 2018
+        .container.has-sticky
+            a.title.has-text-weight-700(href="https://coinme.com") Coinme
         .container
-            h2.subtitle.has-text-weight-200 ROLE | Interaction Designer
-            h1.title.has-text-weight-700 Coinme
-    .hero-footer
-        .container: .is-hero-image
             img(src="https://i.kv.ax/coinmedesktop.png")
+section.section.has-sticky.has-relative-0
+    .columns.is-mobile.has-absolute
+        .column.is-narrow
+            aside.menu
+                p.menu-label Nav
+                ul.menu-list
+                    li: a 
+                        | Context
+                    li: a 
+                        | Step 1
+                    li: a
+                        | Step 2
+                    li: a 
+                        | Step 3
+                    li: a
+                        | Step 4
+        .column
+section.section
+    .columns.timeline.is-mobile.is-centered
+        .column.is-narrow
+            dl.list-none
+                li #[span.has-text-weight-700 Timeline:] time period
+                li #[span.has-text-weight-700 Project type:] project type
+                li #[span.has-text-weight-700 My role:] role
+                li #[span.has-text-weight-700 Tools:] tools
+                li #[span.has-text-weight-700 Skills:] skills
 section.section.is-large
-    .container
+    | asda
+
+section.section.is-large
+    | asda
